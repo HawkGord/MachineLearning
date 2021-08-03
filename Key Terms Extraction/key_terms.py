@@ -11,11 +11,14 @@ from operator import itemgetter
 
 # nltk.download('averaged_perceptron_tagger')
 
-xml_path = "news2.xml"
+xml_path = "news.xml"
+
 tree = etree.parse(xml_path)
 root = tree.getroot()
+
 stop_words = set(stopwords.words('english'))
 stop_words.update(string.punctuation)
+
 lemmatizer = WordNetLemmatizer()
 
 if __name__ == '__main__':
@@ -42,9 +45,7 @@ if __name__ == '__main__':
             if j < 5:
                 print(k[0], end=' ')
                 j += 1
-
-            # if k[1] > 0:
-            #     print(k)
+                
         print()
         print()
 
